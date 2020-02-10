@@ -4,11 +4,11 @@ export const Empleados = ({ personas, handleClick }) => {
   const [cargo, setCargo] = useState(personas)
   const [count, setCount] = useState(0)
 
-  console.log("1 - Leo el estado")
+  console.log("1 - Leo el estado.")
 
   return (
     <>
-      {console.log("2 - Me estoy montando")}
+      {console.log("2 - Me estoy montando.")}
       <h1>{cargo}</h1>
       <br />
       <button onClick={e => handleClick(e)} data-rol="devs">
@@ -29,24 +29,20 @@ export const Empleados = ({ personas, handleClick }) => {
   )
 }
 
-// UseEffect modo ComponentDidUpdate
+// UseEffect modo ComponentDidUpdate (Actualizar estado, fetch de data)
 // useEffect(() => {
 //   console.log("3 - Solo me ejecuto cuando peronas cambia su valor")
 //   setCargo(personas)
 // }, [personas])
 
+// UseEffect modo ComponentDidMount (Consultas al DOM, fetch de data)
 // useEffect(() => {
 //   console.log("3 - Solo me ejecuto una vez")
 // }, [])
 
-// UseEffect modo ComponentDidUpdate
-// useEffect(() => {
-//   setCargo(personas)
-// }, [personas])
-
 // const [windowSize, setWindowSize] = useState(window.innerWidth)
 
-// UseEffect modo ComponentWillUnmount. Con saneamiento de eventos.
+// UseEffect modo ComponentWillUnmount (Remover eventos y listeners)
 // useEffect(() => {
 //   const size = () => {
 //     setWindowSize(window.innerWidth)
