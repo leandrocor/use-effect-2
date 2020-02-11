@@ -9,6 +9,7 @@ const App = () => {
   const roles = [devs, lideres, disenadores]
 
   const [personas, setPersonas] = useState(roles[0])
+  const [showEmpleados, setShowEmpleados] = useState(true)
 
   function cambioCargo(key) {
     switch (key) {
@@ -27,13 +28,18 @@ const App = () => {
     cambioCargo(e.target.getAttribute("data-rol"))
   }
 
-  return <Empleados personas={personas} handleClick={handleSetRol} />
+  return (
+    <>
+      {showEmpleados ? (
+        <Empleados personas={personas} handleClick={handleSetRol} />
+      ) : (
+        <p>Se desmontó Empleados</p>
+      )}
+      <button onClick={() => setShowEmpleados(!showEmpleados)}>
+        Montar / Desmantar Empleados
+      </button>
+    </>
+  )
 }
 
 ReactDOM.render(<App />, document.getElementById("root"))
-
-// const [showEmpleados, setShowEmpleados] = useState(true)
-
-// setTimeout(() => {
-//   setShowEmpleados(false)
-// }, 5000)
